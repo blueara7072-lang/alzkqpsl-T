@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>통합 계산기 (퍼센트 & 의료비)</title>
+  <style>
+    body { font-family: "Noto Sans KR", sans-serif; margin: 20px; padding: 0; background: #f9f9f9; }
+    .calculator { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+    h2 { text-align: center; color: #333; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    input { width: 100%; padding: 8px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 8px; }
+    button { background: #4CAF50; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .result { margin-top: 15px; padding: 10px; background: #f1f1f1; border-radius: 8px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>📊 퍼센트 & 의료비 계산기</h2>
+
+    <h3>퍼센트 계산</h3>
+    <label>전체 값</label>
+    <input type="number" id="total" placeholder="예: 200">
+    <label>비율 (%)</label>
+    <input type="number" id="percent" placeholder="예: 15">
+    <button onclick="calculatePercent()">계산하기</button>
+    <div id="percentResult" class="result"></div>
+
+    <hr>
+
+    <h3>의료비 세액공제 계산</h3>
+    <label>총급여액</label>
+    <input type="number" id="salary" placeholder="예: 50000000">
+    <label>의료비 지출액</label>
+    <input type="number" id="medical" placeholder="예: 3000000">
+    <button onclick="calculateMedical()">계산하기</button>
+    <div id="medicalResult" class="result"></div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
